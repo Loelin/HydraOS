@@ -10,6 +10,7 @@
 #include "apps/Settings/Settings.cpp"
 #include "apps/LEDApp/LEDApp.cpp"
 #include "apps/DinoRunner/DinoRunner.cpp"
+#include "apps/Journal/journal.cpp"
 #include "Preferences.h"
 
 void base() {
@@ -98,6 +99,7 @@ void setup() {
     AppManager::getInstance().addApp("AppLauncher", new Launcher());
     AppManager::getInstance().addApp("Calculator", new Calculator());
     AppManager::getInstance().addApp("Settings", new Settings());
+    AppManager::getInstance().addApp("Journal", new Journal());
     AppManager::getInstance().addApp("LEDApp", new LEDApp());
     AppManager::getInstance().addApp("DinoRunner", new DinoRunner());
     // add more apps here
