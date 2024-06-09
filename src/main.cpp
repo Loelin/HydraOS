@@ -10,6 +10,7 @@
 #include "apps/Settings/Settings.cpp"
 #include "apps/LEDApp/LEDApp.cpp"
 #include "apps/DinoRunner/DinoRunner.cpp"
+#include "apps/Journal/Journal.cpp"
 #include "apps/AudioRecorder/AudioRec.cpp"
 #include "Preferences.h"
 

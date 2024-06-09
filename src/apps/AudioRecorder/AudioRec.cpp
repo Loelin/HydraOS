@@ -68,13 +68,13 @@ public:
             // Write WAV header with placeholder data size
             saveWavHeader(recordFile, record_samplerate, 0xFFFFFFFF); // maximum 32-bit unsigned integer
 
-            // begin recording
-            // if key is pressed, wait for key release
-            //if (M5Cardputer.Keyboard.isPressed()) {
+            //begin recording
+            //if key is pressed, wait for key release
+            // if (M5Cardputer.Keyboard.isPressed()) {
             //    while (M5Cardputer.Keyboard.isPressed()) {
-            //        delay(50);
-            //    }
-            //}
+            //       delay(20);
+            //   }
+            // }
             // record until key is pressed
             while (true) {
                 M5Cardputer.update();
