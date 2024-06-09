@@ -143,9 +143,10 @@ public:
                         audio.setVolume(20);
                         audio.connecttoFS(SD, ("/hydra/rec/" + name).c_str());
                         while (audio.isRunning()) {
-                            audio.loop();
                             M5Cardputer.update();
+                            audio.loop();                
                             if (M5.BtnA.wasPressed() || M5Cardputer.Keyboard.isPressed()) {
+                            M5Cardputer.update();
                                 audio.stopSong();
                                 break;
                             }
