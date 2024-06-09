@@ -16,6 +16,8 @@ private:
     Audio audio;
 public:
     Component &initApp() override {
+        M5Cardputer.Speaker.stop();
+        M5Cardputer.Speaker.end();
         audio.setPinout(41, 43, 42);
         std::vector<Action> actions;
         actions.emplace_back("record", "New recording", "", "", [this]() {
