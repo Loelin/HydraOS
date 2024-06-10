@@ -6,7 +6,7 @@
 #include "M5Cardputer.h"
 #include "ScreenManager.h"
 #include <string>
-#include <ostream>
+#include "SD.h"
 #include "Utils.h"
 #include "icon.h"
 
@@ -14,12 +14,13 @@ class Journal : public App {
 private:
     std::vector<String> history;
     std::vector<String> textbuf;
+    fs::SDFS makefile ;
 
-    
+
 
 public:
     const char *getName() override { return "Journal"; }
-    unsigned char *buff();
+    unsigned char buff[16];
     unsigned char tempfile;
 
 
@@ -27,6 +28,8 @@ public:
     void onAppOpen() override {
         canvas.fillScreen(BLACK);
         StatusBar::draw(true);
+        char tempfile = makefile.begin();
+
     }
 
     void onAppClose() override {
@@ -49,7 +52,13 @@ public:
         Utils::waitForInput(input);
 
     }
+void openTextFile(){
+std::vector<String> filepath;
+makefile.readRAW(buff);
+makefile.open(filepath);
 
+    
+};
     void draw() override {
     }
 
